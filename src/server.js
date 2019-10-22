@@ -11,4 +11,4 @@ mongoose.connect('mongodb+srv://gitfriendly:t0v9f4r2@tindev-rdfpr.mongodb.net/te
 server.use(express.json())
 server.use(routes)
 
-server.listen(3333)
+server.listen(process.env.PORT || 3333)
