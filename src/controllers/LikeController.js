@@ -24,10 +24,10 @@ module.exports = {
 			}
 		}
 
-		await loggedDev.save()
-
 		loggedDev.likes.push(targetDev._id)
 
-		return res.json({ ok: true })
+		await loggedDev.save()
+
+		return res.json(loggedDev)
 	},
 }
