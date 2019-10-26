@@ -20,7 +20,7 @@ module.exports = {
 			user: username,
 			bio,
 			avatar,
-			skils,
+			skills,
 		})
 		return res.json(dev)
 	},

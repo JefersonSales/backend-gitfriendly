@@ -11,6 +11,6 @@ routes.post('/devs', DevController.store)
 
 routes.post('/devs/:devId/likes', LikeController.store)
 routes.post('/devs/:devId/dislikes', DislikesController.store)
-routes.post('/skills', SkillsController.store)
+routes.post('/devs/:devId/skills', SkillsController.store)
 
 module.exports = routes
