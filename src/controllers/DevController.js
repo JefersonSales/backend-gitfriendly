@@ -17,8 +17,8 @@ module.exports = {
 
 		const dev = await Dev.create({
 			name,
-			user: username,
 			bio,
+			user: username,
 			avatar,
 			skills,
 		})
