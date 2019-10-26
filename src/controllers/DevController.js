@@ -13,7 +13,7 @@ module.exports = {
 
 		const respose = await axios.get(`https://api.github.com/users/${username}`)
 
-		const { name, bio, avatar_url: avatar, skils } = respose.data
+		const { name, bio, avatar_url: avatar } = respose.data
 
 		const dev = await Dev.create({
 			name,

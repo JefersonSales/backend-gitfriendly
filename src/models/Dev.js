@@ -23,7 +23,7 @@ const DevSchema = new Schema(
 				ref: 'Dev',
 			},
 		],
-		skils: [String],
+		skills: [String],
 		dislikes: [
 			{
 				type: Schema.Types.ObjectId,

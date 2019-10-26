@@ -1,9 +1,12 @@
 const Dev = require('../models/Dev')
 
 module.exports = {
-	store(req, res) {
-		console.log(req.params.devId)
-		console.log(req.headers.user)
+	async store(req, res) {
+		const { user } = req.headers
+
+		const loggedDev = await Dev.findById(user)
+
+		loggedDev.skills.push()
 		return res.json({ ok: true })
 	},
 }
