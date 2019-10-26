@@ -15,6 +15,7 @@ const DevSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		skills: [String],
 		likes: [
 			{
 				type: Schema.Types.ObjectId,

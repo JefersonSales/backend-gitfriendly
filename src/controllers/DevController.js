@@ -10,6 +10,7 @@ module.exports = {
 			$and: [{ _id: { $ne: user } }, { _id: { $nin: loggedDev.likes } }, { _id: { $nin: loggedDev.dislikes } }],
 		})
 	},
+
 	async store(req, res) {
 		const { username } = req.body
 
@@ -28,6 +29,7 @@ module.exports = {
 			user: username,
 			bio,
 			avatar,
+			skills,
 		})
 
 		return res.json(dev)
