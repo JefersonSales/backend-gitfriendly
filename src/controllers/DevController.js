@@ -13,13 +13,14 @@ module.exports = {
 
 		const respose = await axios.get(`https://api.github.com/users/${username}`)
 
-		const { name, bio, avatar_url: avatar } = respose.data
+		const { name, bio, avatar_url: avatar, skils } = respose.data
 
 		const dev = await Dev.create({
 			name,
 			user: username,
 			bio,
 			avatar,
+			skils,
 		})
 		return res.json(dev)
 	},
@@ -29,7 +30,12 @@ module.exports = {
 		const loggedDev = await Dev.findById(user)
 
 		const users = await Dev.find({
-			$and: [{ _id: { $ne: user } }, { _id: { $nin: loggedDev.likes } }, { _id: { $nin: loggedDev.dislikes } }],
+			$and: [
+				{ _id: { $ne: user } },
+				{ _id: { $nin: loggedDev.likes } },
+				{ _id: { $nin: loggedDev.dislikes } },
+				{ _id: { $nin: loggedDev.skils } },
+			],
 		})
 		return res.json(users)
 	},
