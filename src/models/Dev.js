@@ -5,12 +5,10 @@ const DevSchema = new Schema(
 		name: {
 			type: String,
 			required: true,
-			trim: true,
 		},
 		user: {
 			type: String,
 			required: true,
-			trim: true,
 		},
 		bio: String,
 		avatar: {
@@ -23,7 +21,6 @@ const DevSchema = new Schema(
 				ref: 'Dev',
 			},
 		],
-		skills: [String],
 		dislikes: [
 			{
 				type: Schema.Types.ObjectId,
