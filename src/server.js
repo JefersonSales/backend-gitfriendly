@@ -18,6 +18,7 @@ io.on('connection', socket => {
 mongoose.connect('mongodb+srv://gitfriendly:t0v9f4r2@tindev-rdfpr.mongodb.net/test?retryWrites=true&w=majority', {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
+	useFindAndModify: false,
 })
 
 app.use((req, res, next) => {
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 })
 
 app.use(cors())
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use(routes)
 
